@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "知乎深色模式",
+  "version": "1.0",
+  "description": "为知乎页面提供纯黑底色的深色主题，并适配浏览器本身的深色模式",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "theme"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://www.zhihu.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
