@@ -1,0 +1,10 @@
+node_modules/
+*.vsix
+navigationData.json
+.DS_Store
+Thumbs.db
+.vscode-test/
+*.log
+dist/
+out/
+build/
