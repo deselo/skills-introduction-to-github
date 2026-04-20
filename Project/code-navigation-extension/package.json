@@ -1,0 +1,199 @@
+{
+  "name": "code-navigation-extension",
+  "displayName": "代码导航扩展",
+  "description": "增强大型项目的代码导航功能 - 快速跳转到函数调用和定义",
+  "version": "1.0.0",
+  "publisher": "liuxin",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension/extension.js",
+  "icon": "./extension/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "codeNavigation.findDefinition",
+        "title": "查找函数定义",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.findUsages",
+        "title": "查找函数使用",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.showCallHierarchy",
+        "title": "显示调用层次",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.scanProject",
+        "title": "扫描项目导航",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.clearCache",
+        "title": "清除导航缓存",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.showCodeStructure",
+        "title": "显示代码结构",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.searchSymbols",
+        "title": "搜索符号",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.showDependencies",
+        "title": "显示依赖分析",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.compareFiles",
+        "title": "比较文件",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.addBookmark",
+        "title": "添加书签",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.showBookmarks",
+        "title": "显示书签",
+        "category": "代码导航"
+      },
+      {
+        "command": "codeNavigation.showCodeMetrics",
+        "title": "显示代码度量",
+        "category": "代码导航"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codeNavigation.findDefinition",
+        "key": "f12",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeNavigation.findUsages",
+        "key": "shift+f12",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeNavigation.showCallHierarchy",
+        "key": "ctrl+shift+h",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeNavigation.findDefinition",
+        "key": "ctrl+click",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeNavigation.showCodeStructure",
+        "key": "ctrl+shift+o",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeNavigation.searchSymbols",
+        "key": "ctrl+t",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeNavigation.showDependencies",
+        "key": "ctrl+shift+d",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeNavigation.addBookmark",
+        "key": "ctrl+f2",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "codeNavigation.showBookmarks",
+        "key": "shift+f2",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "codeNavigation.findDefinition",
+          "when": "editorTextFocus",
+          "group": "navigation@1"
+        },
+        {
+          "command": "codeNavigation.findUsages",
+          "when": "editorTextFocus",
+          "group": "navigation@2"
+        },
+        {
+          "command": "codeNavigation.showCallHierarchy",
+          "when": "editorTextFocus",
+          "group": "navigation@3"
+        },
+        {
+          "command": "codeNavigation.showCodeStructure",
+          "when": "editorTextFocus",
+          "group": "navigation@4"
+        },
+        {
+          "command": "codeNavigation.searchSymbols",
+          "when": "editorTextFocus",
+          "group": "navigation@5"
+        },
+        {
+          "command": "codeNavigation.showDependencies",
+          "when": "editorTextFocus",
+          "group": "navigation@6"
+        },
+        {
+          "command": "codeNavigation.addBookmark",
+          "when": "editorTextFocus",
+          "group": "navigation@7"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "codeNavigation.compareFiles",
+          "group": "navigation@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "echo 'No compilation needed for JavaScript extension'",
+    "watch": "echo 'No watch needed for JavaScript extension'",
+    "pretest": "npm run compile",
+    "test": "echo 'No tests defined yet'",
+    "package": "vsce package"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/code-navigation-extension"
+  },
+  "keywords": [
+    "code-navigation",
+    "function-definition",
+    "function-usage",
+    "call-hierarchy",
+    "code-analysis"
+  ],
+  "author": "liuxin",
+  "license": "MIT",
+  "devDependencies": {
+    "@vscode/vsce": "^2.19.0"
+  }
+}
